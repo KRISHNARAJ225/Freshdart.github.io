@@ -1,9 +1,7 @@
-// src/components/Cart.jsx  (or wherever you want to place it)
-import React from 'react';
-import { Link } from 'react-router-dom'; // if using react-router, otherwise use <a href="/products">
 
-// Optional: if you have a global cart context or state, import it here
-// For this example we use dummy data – replace with your real cart logic
+import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 const dummyCartItems = [
   {
@@ -12,7 +10,7 @@ const dummyCartItems = [
     price: 180,
     quantity: 2,
     unit: "kg",
-    image: "/assets/img/Apple.jpg", // ← use your public path
+    image: "/assets/img/Apple.jpg", 
   },
   {
     id: 3,
@@ -33,14 +31,14 @@ const dummyCartItems = [
 ];
 
 function Cart() {
-  // In real app: get cart from context, localStorage, Redux, etc.
-  const cartItems = dummyCartItems; // ← replace with real data
+
+  const cartItems = dummyCartItems; 
 
   const subtotal = cartItems.reduce((sum, item) => {
     return sum + item.price * item.quantity;
   }, 0);
 
-  const deliveryCharge = subtotal >= 500 ? 0 : 50; // example rule
+  const deliveryCharge = subtotal >= 500 ? 0 : 50; 
   const total = subtotal + deliveryCharge;
 
   return (
@@ -48,11 +46,11 @@ function Cart() {
       <h2 className="mb-4 text-center text-md-start">Your Cart</h2>
 
       {cartItems.length === 0 ? (
-        // ── Empty Cart State ───────────────────────────────────────────────
+       
         <div className="text-center py-5 my-5">
           <div className="mb-4">
             <img
-              src="/assets/img/empty-cart.jpg" // ← put a nice empty cart image here
+              src="/assets/img/empty-cart.jpg" 
               alt="Empty shopping cart"
               className="img-fluid"
               style={{ maxHeight: '280px' }}
@@ -67,9 +65,9 @@ function Cart() {
           </Link>
         </div>
       ) : (
-        // ── Cart with items ─────────────────────────────────────────────────
+    
         <div className="row">
-          {/* Left column – Cart Items */}
+         
           <div className="col-lg-8 mb-4 mb-lg-0">
             {cartItems.map((item) => (
               <div
@@ -77,7 +75,7 @@ function Cart() {
                 className="card mb-3 border-0 shadow-sm rounded-3"
               >
                 <div className="row g-0 align-items-center p-3">
-                  {/* Image */}
+                
                   <div className="col-4 col-md-3 col-lg-2">
                     <img
                       src={item.image}
@@ -91,7 +89,7 @@ function Cart() {
                     />
                   </div>
 
-                  {/* Details */}
+                 
                   <div className="col-8 col-md-9 col-lg-10 ps-3 ps-md-4">
                     <div className="d-flex justify-content-between align-items-start mb-2">
                       <div>
@@ -117,7 +115,7 @@ function Cart() {
                           value={item.quantity}
                           min="0.5"
                           step="0.5"
-                          readOnly // ← make editable later
+                          readOnly 
                         />
                         <button className="btn btn-outline-secondary">+</button>
                       </div>
@@ -131,7 +129,6 @@ function Cart() {
             ))}
           </div>
 
-          {/* Right column – Order Summary */}
           <div className="col-lg-4">
             <div className="card shadow-sm sticky-top" style={{ top: '20px' }}>
               <div className="card-body">

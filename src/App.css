@@ -1,12 +1,12 @@
 html, body {
-  height: 100%;               /* ← important base */
-  min-height: 100vh;          /* better: full viewport height minimum */
+  height: 100%;             
+  min-height: 100vh;       
   margin: 0;
   padding: 0;
-  overflow-x: hidden;         /* prevents unwanted horizontal scroll */
+  overflow-x: hidden;         
 }
 
-/* If you have a main wrapper */
+
 #root, .App, main {
   min-height: 100vh;
 }

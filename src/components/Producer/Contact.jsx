@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function Contact() {
   return (
-    <footer className="bg-dark text-white pt-5 pb-4">
+    <footer className="bg-dark text-white pt-5 pb-4  mt-auto">
       <div className="container">
         <div className="row g-5">
 
